@@ -15,18 +15,18 @@ WORKDIR /app
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y --no-install-recommends \
-        ca-certificates \
-        make \
-        gcc \
-        g++ \
-        pkg-config \
-        pcscd \
-        libpcsclite-dev \
-        libccid \
-        libdvbv5-dev \
-        pcsc-tools \
-        dvb-tools \
-        && \
+    ca-certificates \
+    make \
+    gcc \
+    g++ \
+    pkg-config \
+    pcscd \
+    libpcsclite-dev \
+    libccid \
+    libdvbv5-dev \
+    pcsc-tools \
+    dvb-tools \
+    && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 COPY --from=build /usr/local/lib/node_modules/mirakurun /app
